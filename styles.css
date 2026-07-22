@@ -1,0 +1,86 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-cream: var(--cream);
+  --color-terracotta: var(--terracotta);
+  --color-brown: var(--brown);
+  --color-brown-deep: var(--brown-deep);
+  --color-ochre: var(--ochre);
+  --color-whatsapp: var(--whatsapp);
+  --font-display: "Alfa Slab One", serif;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.97 0.015 80);
+  --foreground: oklch(0.25 0.04 40);
+  --card: oklch(0.98 0.012 80);
+  --card-foreground: oklch(0.25 0.04 40);
+  --popover: oklch(0.98 0.012 80);
+  --popover-foreground: oklch(0.25 0.04 40);
+  --primary: oklch(0.48 0.14 35);           /* terracotta / rojo teja */
+  --primary-foreground: oklch(0.98 0.01 80);
+  --secondary: oklch(0.93 0.025 75);
+  --secondary-foreground: oklch(0.25 0.04 40);
+  --muted: oklch(0.94 0.02 75);
+  --muted-foreground: oklch(0.45 0.03 45);
+  --accent: oklch(0.72 0.14 65);            /* ochre */
+  --accent-foreground: oklch(0.2 0.04 40);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.98 0.01 80);
+  --border: oklch(0.85 0.02 70);
+  --input: oklch(0.88 0.02 70);
+  --ring: oklch(0.48 0.14 35);
+
+  --cream: oklch(0.965 0.018 82);
+  --terracotta: oklch(0.55 0.16 38);
+  --brown: oklch(0.35 0.05 45);
+  --brown-deep: oklch(0.22 0.04 40);
+  --ochre: oklch(0.7 0.14 70);
+  --whatsapp: oklch(0.68 0.17 150);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-serif); }
+}
+
+@utility font-display { font-family: var(--font-display); }
+@utility font-serif { font-family: var(--font-serif); }
+
+@utility paper-bg {
+  background-color: var(--color-cream);
+  background-image:
+    radial-gradient(circle at 20% 30%, oklch(0.85 0.04 60 / 0.15) 0, transparent 40%),
+    radial-gradient(circle at 80% 70%, oklch(0.75 0.06 40 / 0.12) 0, transparent 45%);
+}
